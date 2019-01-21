@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBcWDtjd-p8pD-fR53uw8lzq3njonf3Kvg",
+            authDomain: "dre-s-firebase.firebaseapp.com",
+            databaseURL: "https://dre-s-firebase.firebaseio.com",
+            projectId: "dre-s-firebase",
+            storageBucket: "dre-s-firebase.appspot.com",
+            messagingSenderId: "142917866539"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/moment.js"></script>
+</head>
+
+<body style="padding: 15px;">
+
+    <div class="=container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="jumbotron" style="background-color:dark gray">
+                    <h1 class="text-center">Dre' Time is Train Time</h1>
+                    <h3 class="text-center">Choo Choo. Chee Chee.</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- train schedule -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-heading bg-primary text-white" style="padding: 5px;">Train Schedule</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency (min)</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rows">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- add train form -->
+        <div class="row" style="margin-top: 20px">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-heading bg-primary text-white" style="padding: 5px;">Add Train</div>
+                    <div class="card-body">
+                        <div>
+                            <div class="form-group">
+                                <label for="add_trainName">Train name</label>
+                                <input type="text" class="form-control" id="add_trainName" aria-describedby="nameHelp"
+                                    placeholder="Enter name">
+                            </div>
+                            <div class="form-group">
+                                <label for="add_destination">Destination</label>
+                                <input type="text" class="form-control" id="add_destination" placeholder="Enter Destination">
+                            </div>
+                            <div class="form-group">
+                                <label for="add_firstTrainTime">First Train Time (HHmm - military time)</label>
+                                <input type="text" class="form-control" id="add_firstTrainTime" aria-describedby="nameHelp"
+                                    placeholder="Enter name">
+                            </div>
+                            <div class="form-group">
+                                <label for="add_frequency">Frequency</label>
+                                <input type="text" class="form-control" id="add_frequency" placeholder="Enter Frequency">
+                            </div>
+                            <button id="add-train-btn" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
